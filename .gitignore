@@ -1,0 +1,7 @@
+node_modules/
+config/Keys_dev.js
+utils/Cloudinary/cloudinary_dev.js
+uploads/
+client/
+algotest.js
+*.log
