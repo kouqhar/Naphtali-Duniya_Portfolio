@@ -1,26 +1,28 @@
-# naphtaliduniyaportfolio
+# naphtaliduniyaportfolio :rocket: :metal:
 
 This is a personal portfolio of Naphtali Duniya, a Full-Stack web developer.
 
-# About Me
+# About Me :octocat:
 
 Hi! I am Naphtali Duniya! A passionate and pragmatic Full-Stack developer with experience building websites and web applications. Over the years of learning, practice, and teaching, I've learned to be a more independent developer who can flip a problem with a solution, use the help of search engines, stack overflow, team of developers, communities and any other means of finding a solution to a problem. I work with JavaScript and have comfortable knowledge with Bootstrap, jQuery, and nodeJs. Also, experience working with Html5, Css3, Scss, Git, and ReactJs.
 
 My mission is to make coding and web development accessible and flexible to everyone through knowledgeable contents that are simple to digest, and also practical to implement.
 
-# Contact Me
+# Contact Me :sparkles:
 
 **Email**
-If you are looking to get ahold of me, you can send me an email NAPHTALI DUNIYA[Email](mailto:naphtaliduniya2@gmail.com)
+
+- If you are looking to get ahold of me, you can send me an email [Email : Naphtali Duniya](mailto:naphtaliduniya2@gmail.com)
 
 **Social Media**
 
-- Instagram NAPHTALI DUNIYA [Instagram](https://www.instagram.com/_kouqhar) 'recommended'
+- Instagram [Instagram : Naphtali Duniya](https://www.instagram.com/_kouqhar) '**recommended**'
 
-* Via Twitter NAPHTALI DUNIYA [Twitter](https://twitter.com/kouqhar)
+* Via Twitter [Twitter : Naphtali Duniya](https://twitter.com/kouqhar)
 
 **Telephone**
-Call +234 (0)81 664 661 73
+
+- Call +234 (0)81 664 661 73
 
 # Installation
 
@@ -30,13 +32,17 @@ You can use this on the server side, just run the following command to install d
 npm install
 ```
 
-Also, change directory to client and run the same command above to install dependencies for the client or front end.
+Also, change directory to client and run the same command above to install dependencies for the client or front end. Or simply run the command below from the root directory to perform the same operation.
+
+```
+npm run client-install
+```
 
 # Getting Started
 
 To get you application working, create an export a `keys_dev.js` file in the `config` folder and paste the below configuration in the file with your custom values to run configuration locally.
 
-```
+```javascript
 module.exports = {
   mongoURI: "mongodb://localhost:27017/database-Name",
   secretOrKey: "your-secret-key-for-the-application",
@@ -48,7 +54,7 @@ module.exports = {
 
 Or, create an export a `keys_prod.js` file in the `config` folder and paste the below configuration in the file to run configuration on production.
 
-```
+```javascript
 module.exports = {
   mongoURI: process.env.MONGO_URI,
   secretOrKey: process.env.SECRET_OR_KEY,
@@ -67,9 +73,21 @@ This repo has a Super Admin feature, if you are stuck, have any question or inte
 
 ---
 
-## Mailer Note
+### Mailer Note
 
 To be able to send mail via g-mail, be sure to set `less secure` on the g-mail account provided above.
+
+# Error Logging
+
+If your run into an error, winston logger has been enabled to handle different types of unhandled exceptions, such as :
+
+> All files with the **Root-dir** as `Destination` has a `.log` extension.
+
+- Error : MongoDB || File-name : log || Dest : Database || Level : Info
+- Error : MongoDB || File-name : logFile || Dest : Root-dir || Level : Info
+- Error : Exceptions || File-name : exceptions || Dest : Root-dir || Level : Error
+- Error : Rejections || File-name : rejections || Dest : Root-dir || Level : Error
+- Error : Uncaught || File-name : uncaughtExceptions || Dest : Root-dir || Level : Error
 
 # Deployment
 
