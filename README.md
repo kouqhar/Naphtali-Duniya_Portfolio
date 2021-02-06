@@ -77,17 +77,54 @@ This repo has a Super Admin feature, if you are stuck, have any question or inte
 
 To be able to send mail via g-mail, be sure to set `less secure` on the g-mail account provided above.
 
+---
+
+### Cloudinary Note
+
+To get you cloudinary working, create an export a `cloudinary_dev.js` file in the `utils/Cloudinary` folder and paste the below configuration in the file with your the actual values to run configuration locally.
+
+```javascript
+// Import the cloudinary dependency
+const cloudinary = require("cloudinary").v2;
+
+// Configure cloudinary in development
+cloudinary.config({
+  cloud_name: "Your-cloudinary-cloud-name",
+  api_key: "Your-cloudinary-api_key-",
+  api_secret: "Your-cloudinary-api_secret",
+});
+
+module.exports = cloudinary;
+```
+
+Or, create an export a `cloudinary_prod.js` file in the `utils/Cloudinary` folder and paste the below configuration in the file to run configuration on production.
+
+```javascript
+const cloudinary = require("cloudinary").v2;
+
+// Configure cloudinary in production
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+module.exports = { cloudinary };
+```
+
 # Error Logging
 
 If your run into an error, winston logger has been enabled to handle different types of unhandled exceptions, such as :
 
 > All files with the **Root-dir** as `Destination` has a `.log` extension.
 
-- Error : MongoDB || File-name : log || Dest : Database || Level : Info
-- Error : MongoDB || File-name : logFile || Dest : Root-dir || Level : Info
-- Error : Exceptions || File-name : exceptions || Dest : Root-dir || Level : Error
-- Error : Rejections || File-name : rejections || Dest : Root-dir || Level : Error
-- Error : Uncaught || File-name : uncaughtExceptions || Dest : Root-dir || Level : Error
+| Error      |     File Name      | Destination | Level |
+| ---------- | :----------------: | :---------: | ----: |
+| MongoDB    |        log         |  Database   |  Info |
+| MongoDB    |      logFile       |  Root-dir   |  Info |
+| Exceptions |     exceptions     |  Root-dir   | Error |
+| Rejections |     rejections     |  Root-dir   | Error |
+| Uncaught   | uncaughtExceptions |  Root-dir   | Error |
 
 # Deployment
 
